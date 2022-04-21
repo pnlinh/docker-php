@@ -56,14 +56,23 @@ COPY config/74/php.ini /etc/php7/conf.d/custom.ini
 # Configure supervisord
 COPY config/74/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Make sure files/folders needed by the processes are accessable when they run under the nobody user
-RUN chown -R nobody.nobody /var/www/html /run /var/lib/nginx /var/log/nginx
+# Make sure files/folders needed by the processes are accessable when they run under the www user
+ARG nginxUID=1000
+ARG nginxGID=1000
+
+RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
+    mkdir -p /var/www/html && \
+    mkdir -p /var/cache/nginx && \
+    chown -R www:www /var/www/html && \
+    chown -R www:www /run && \
+    chown -R www:www /var/lib/nginx && \
+    chown -R www:www /var/log/nginx
 
 # Switch to use a non-root user from here on
-USER nobody
+USER www
 
 # Add application
-COPY --chown=nobody src/ /var/www/html/public
+COPY --chown=www src/ /var/www/html/public
 
 # Expose the port nginx is reachable on
 EXPOSE 80
