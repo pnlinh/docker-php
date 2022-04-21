@@ -68,7 +68,7 @@ RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
     chown -R www:www /var/lib/nginx && \
     chown -R www:www /var/log/nginx
 
-# Switch to use a non-root user from here on
+# Switch to use a www user from here on
 USER www
 
 # Add application
