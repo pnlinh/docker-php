@@ -59,14 +59,23 @@ COPY config/80/php.ini /etc/php8/conf.d/custom.ini
 # Configure supervisord
 COPY config/80/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Make sure files/folders needed by the processes are accessable when they run under the nobody user
-RUN chown -R nobody.nobody /var/www/html /run /var/lib/nginx /var/log/nginx
+# Make sure files/folders needed by the processes are accessable when they run under the www user
+ARG nginxUID=1000
+ARG nginxGID=1000
 
-# Switch to use a non-root user from here on
-USER nobody
+RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
+    mkdir -p /var/www/html && \
+    mkdir -p /var/cache/nginx && \
+    chown -R www:www /var/www/html && \
+    chown -R www:www /run && \
+    chown -R www:www /var/lib/nginx && \
+    chown -R www:www /var/log/nginx
+
+# Switch to use a www user from here on
+USER www
 
 # Add application
-COPY --chown=nobody src/ /var/www/html/public
+COPY --chown=www src/ /var/www/html/public
 
 # Expose the port nginx is reachable on
 EXPOSE 80
@@ -74,5 +83,5 @@ EXPOSE 80
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
-# Configure a healthcheck to validate that everything is up&running
+# Configure a healthcheck to validate that everything is up & running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:80/fpm-ping
