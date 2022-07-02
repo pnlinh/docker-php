@@ -43,6 +43,9 @@ RUN apk add --no-cache \
 
 # Install XDebug
 
+# Create symlink so programs depending on `php` still function
+RUN ln -s /usr/bin/php7 /usr/bin/php
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
@@ -80,5 +83,5 @@ EXPOSE 80
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
-# Configure a healthcheck to validate that everything is up&running
+# Configure a healthcheck to validate that everything is up & running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:80/fpm-ping
