@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+VERSIONS=("74" "80" "81")
+
+# shellcheck disable=SC2199
+# shellcheck disable=SC2076
+if [[ ! " ${VERSIONS[@]} " =~ " $1 " ]]; then
+	echo "Invalid version."
+	exit 1
+
+fi
+
+# If we pass any arguments...
+if [ $# -gt 0 ]; then
+	docker build --no-cache -f Dockerfile."$1" . -t pnlinh/php:"$1"
+else
+	echo "Nothing to build."
+fi
