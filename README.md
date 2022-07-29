@@ -4,9 +4,9 @@ Simple docker image for PHP development
 # How to use
 - First, build image
 ```shell
-./build 74 # Build php 7.4
-./build 80 # Build php 8.0
-./build 81 # Build php 8.1
+./build 74 # Build docker php image for php 7.4
+./build 80 # Build docker php image for php 8.0
+./build 81 # Build docker php image for php 8.1
 ```
 
 - Mount your code to be served with container
