@@ -39,7 +39,8 @@ RUN apk add --no-cache \
   nginx \
   vim \
   nano \
-  supervisor
+  supervisor \
+  git
 
 # Install XDebug
 
