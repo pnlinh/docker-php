@@ -6,18 +6,18 @@ IMAGE="pnlinh/php"
 # shellcheck disable=SC2199
 # shellcheck disable=SC2076
 if [[ ! " ${VERSIONS[@]} " =~ " $1 " ]]; then
-	echo "Invalid version."
-	exit 1
+  echo "Invalid version."
+  exit 1
 fi
 
 # If we pass any arguments...
 if [ $# -gt 0 ]; then
-	if [ "$2" == "push" ]; then
-		docker push ${IMAGE}:"$1"
-		echo "All done."
-		exit 0
-	fi
-	docker build --no-cache -f Dockerfile."$1" . -t ${IMAGE}:"$1"
+  if [ "$2" == "push" ]; then
+    docker push ${IMAGE}:"$1"
+    echo "All done."
+    exit 0
+  fi
+  docker build --no-cache -f Dockerfile."$1" . -t ${IMAGE}:"$1"
 else
-	echo "Nothing to build."
+  echo "Nothing to build."
 fi
