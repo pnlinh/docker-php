@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSIONS=("74" "80" "81")
+VERSIONS=("72" "74" "80" "81")
 IMAGE="pnlinh/php"
 
 # shellcheck disable=SC2199
@@ -17,7 +17,7 @@ if [ $# -gt 0 ]; then
     echo "All done."
     exit 0
   fi
-  docker build --no-cache -f Dockerfile."$1" . -t ${IMAGE}:"$1"
+  docker build --no-cache -f "php$1".Dockerfile . -t ${IMAGE}:"$1"
 else
   echo "Nothing to build."
 fi
