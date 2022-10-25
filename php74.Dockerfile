@@ -68,6 +68,7 @@ ARG nginxGID=1000
 
 RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
     mkdir -p /var/www/html && \
+    mkdir -p /var/www/html/tmp && \
     mkdir -p /var/cache/nginx && \
     chown -R www:www /var/www/html && \
     chown -R www:www /run && \
@@ -78,7 +79,7 @@ RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
 USER www
 
 # Add application
-COPY --chown=www src/ /var/www/html/public
+COPY --chown=www src/ /var/www/html
 
 # Expose the port nginx is reachable on
 EXPOSE 80
