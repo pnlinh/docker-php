@@ -21,6 +21,24 @@ docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:
 docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.1
 ```
 
+- With docker-compose
+
+```
+version: '3.4'
+
+services:
+    app:
+        image: pnlinh/laravel:php7.4
+        hostname: laravel-app
+        container_name: laravel-app
+        ports:
+            - "80:80"
+        volumes:
+            - .:/var/www/html
+        networks:
+            - localnet
+```
+
 - See PHP version info
 
 ```shell
