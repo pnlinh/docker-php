@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-VERSIONS=("72" "74" "80" "81")
-IMAGE="pnlinh/php"
+TAGS=("php7.2" "php7.4" "php8.0" "php8.1")
+IMAGE="pnlinh/laravel"
 
 # shellcheck disable=SC2199
 # shellcheck disable=SC2076
-if [[ ! " ${VERSIONS[@]} " =~ " $1 " ]]; then
+if [[ ! " ${TAGS[@]} " =~ " $1 " ]]; then
   echo "Invalid version."
   exit 1
 fi
@@ -17,7 +17,7 @@ if [ $# -gt 0 ]; then
     echo "All done."
     exit 0
   fi
-  docker build --no-cache -f "php$1".Dockerfile . -t ${IMAGE}:"$1"
+  docker build --no-cache -f "$1".Dockerfile . -t ${IMAGE}:"$1"
 else
   echo "Nothing to build."
 fi
