@@ -2,6 +2,9 @@
 
 Simple docker image for PHP/Laravel development
 
+- Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
+- Symfony: Todo
+
 ### How to use
 
 - Build image
