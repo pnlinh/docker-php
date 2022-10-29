@@ -1,9 +1,9 @@
 # Docker PHP-FPM & Nginx base on Alpine Linux
 
-Simple docker image for PHP/Laravel development
+Simple docker image for Symfony development
 
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
-- Symfony: Todo
+- PHP/Laravel: https://github.com/pnlinh/docker-php
 
 ### How to use
 
@@ -19,9 +19,7 @@ Simple docker image for PHP/Laravel development
 - Mount your code to be served with container
 
 ```shell
-docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php7.4
-docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.0
-docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.1
+docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/symfony:php8.1
 ```
 
 - With docker-compose
@@ -31,26 +29,24 @@ version: '3.4'
 
 services:
     app:
-        image: pnlinh/laravel:php7.4
-        hostname: laravel-app
-        container_name: laravel-app
+        image: pnlinh/symfony:php8.1
+        hostname: symfony-app
+        container_name: symfony-app
         ports:
             - "80:80"
         volumes:
             - .:/var/www/html
         networks:
             - localnet
+            
+networks:
+    localnet:
+        driver: "bridge"
 ```
 
-- See PHP version info
+- Browser to: [http://localhost](http://localhost)
 
-```shell
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php7.4
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php8.0
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php8.1
-```
-
-![image](https://user-images.githubusercontent.com/26193890/164198187-743e3585-1379-4d06-a2d5-34330b17d060.png)
+![image](https://user-images.githubusercontent.com/26193890/198827932-7901d969-cf9c-4f2a-8154-e2b1fb4840f8.png)
 
 ### References
 
