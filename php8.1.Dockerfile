@@ -37,6 +37,7 @@ RUN apk add --no-cache \
   php81-pecl-apcu \
   php81-common \
   php81-sqlite3 \
+  php81-opcache \
   curl \
   nginx \
   vim \
