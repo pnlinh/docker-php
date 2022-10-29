@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 TAGS=("php7.2" "php7.4" "php8.0" "php8.1")
-IMAGE="pnlinh/laravel"
+IMAGE="pnlinh/symfony"
 
 # shellcheck disable=SC2199
 # shellcheck disable=SC2076
