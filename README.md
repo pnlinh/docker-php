@@ -3,7 +3,7 @@
 Simple docker image for PHP/Laravel development
 
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
-- Symfony: Todo
+- Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
 
 ### How to use
 
@@ -19,8 +19,6 @@ Simple docker image for PHP/Laravel development
 - Mount your code to be served with container
 
 ```shell
-docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php7.4
-docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.0
 docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.1
 ```
 
@@ -31,7 +29,7 @@ version: '3.4'
 
 services:
     app:
-        image: pnlinh/laravel:php7.4
+        image: pnlinh/laravel:php8.1
         hostname: laravel-app
         container_name: laravel-app
         ports:
@@ -40,17 +38,14 @@ services:
             - .:/var/www/html
         networks:
             - localnet
+networks:
+    localnet:
+        driver: "bridge"
 ```
 
-- See PHP version info
+- Browser to: [http://localhost](http://localhost)
 
-```shell
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php7.4
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php8.0
-docker run --name=app --rm -p 80:80 pnlinh/laravel:php8.1
-```
-
-![image](https://user-images.githubusercontent.com/26193890/164198187-743e3585-1379-4d06-a2d5-34330b17d060.png)
+![image](https://user-images.githubusercontent.com/26193890/198828634-fc11aaa1-7175-4433-b4f3-755381669e74.png)
 
 ### References
 
