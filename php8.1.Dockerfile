@@ -81,8 +81,11 @@ USER www
 # Add application
 COPY --chown=www src/ /var/www/html/public
 
+# SSL config
+COPY --chown=www config/81/etc/nginx/ssl /etc/nginx/ssl
+
 # Expose the port nginx is reachable on
-EXPOSE 80
+EXPOSE 80 443
 
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
