@@ -1,7 +1,7 @@
 ARG ALPINE_VERSION=3.16
 FROM alpine:${ALPINE_VERSION}
 LABEL Maintainer="Ngoc Linh Pham <pnlinh1207@gmail.com>"
-LABEL Description="Lightweight container with Nginx 1.20 & PHP 8.0 based on Alpine Linux."
+LABEL Description="Lightweight container with Nginx 1.22 & PHP 8.0 based on Alpine Linux."
 
 # Setup document root
 WORKDIR /var/www/html
@@ -17,6 +17,8 @@ RUN apk add --no-cache \
   php8-mbstring  \
   php8-openssl  \
   php8-pdo_pgsql  \
+  php8-pdo_mysql \
+  php8-pdo_sqlite \
   php8-curl  \
   php8-pdo  \
   php8-tokenizer  \
@@ -29,20 +31,10 @@ RUN apk add --no-cache \
   php8-xmlreader \
   php8-zip \
   php8-simplexml \
-  php8-redis \
-  php8-pdo_mysql \
-  php8-pdo_pgsql \
-  php8-pdo_sqlite \
-  php8-soap \
-  php8-pecl-apcu \
-  php8-common \
-  php8-sqlite3 \
+  php8-session \
   curl \
   nginx \
-  vim \
-  nano \
-  supervisor \
-  git
+  supervisor
 
 # Install XDebug
 
@@ -50,7 +42,7 @@ RUN apk add --no-cache \
 RUN cp /usr/bin/php8 /usr/bin/php
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
 # Configure nginx
 COPY config/80/nginx.conf /etc/nginx/nginx.conf

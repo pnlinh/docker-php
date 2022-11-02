@@ -17,6 +17,7 @@ RUN apk add --no-cache \
   php7-mbstring  \
   php7-openssl  \
   php7-pdo_pgsql  \
+  php7-pdo_mysql \
   php7-curl  \
   php7-pdo  \
   php7-tokenizer  \
@@ -29,20 +30,10 @@ RUN apk add --no-cache \
   php7-xmlreader \
   php7-zip \
   php7-simplexml \
-  php7-redis \
-  php7-pdo_mysql \
-  php7-pdo_pgsql \
-  php7-pdo_sqlite \
-  php7-soap \
-  php7-pecl-apcu \
-  php7-common \
-  php7-sqlite3 \
+  php7-session \
   curl \
   nginx \
-  vim \
-  nano \
-  supervisor \
-  git
+  supervisor
 
 # Install XDebug
 
@@ -50,7 +41,7 @@ RUN apk add --no-cache \
 RUN cp /usr/bin/php7 /usr/bin/php
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
 # Configure nginx
 COPY config/74/nginx.conf /etc/nginx/nginx.conf
