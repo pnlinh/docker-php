@@ -52,7 +52,7 @@ RUN apk add --no-cache \
 RUN cp /usr/bin/php81 /usr/bin/php
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
 # Configure nginx
 COPY config/81/nginx.conf /etc/nginx/nginx.conf
