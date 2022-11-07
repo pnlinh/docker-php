@@ -1,4 +1,6 @@
 ARG ALPINE_VERSION=3.15
+ARG NODE_VERSION=10
+FROM node:${NODE_VERSION}-alpine AS node
 FROM alpine:${ALPINE_VERSION}
 LABEL Maintainer="Ngoc Linh Pham <pnlinh1207@gmail.com>"
 LABEL Description="Lightweight container with Nginx 1.20 & PHP 7.4 based on Alpine Linux."
@@ -37,9 +39,22 @@ RUN apk add --no-cache \
     php7-pecl-apcu \
     php7-ftp \
     php7-dba \
+    php7-redis \
     curl \
     nginx \
     runit
+
+# Add node repository with 10 version
+COPY --from=node /usr/lib /usr/lib
+COPY --from=node /usr/local/share /usr/local/share
+COPY --from=node /usr/local/lib /usr/local/lib
+COPY --from=node /usr/local/include /usr/local/include
+COPY --from=node /usr/local/bin /usr/local/bin
+
+# Install node dependecis
+RUN npm install -g \
+    less@1.7.5 uglifycss coffee-script stylus nib typescript handlebars uglify-js@2 \
+    autoprefixer autoprefixer-5 autoprefixer-cli roole clean-css
 
 # Install XDebug
 
