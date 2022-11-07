@@ -10,7 +10,7 @@ Simple docker image for PHP/Laravel development
 - Build image
 
 ```shell
-./build php7.2 # Build image with php 7.4
+./build php7.2 # Build image with php 7.2
 ./build php7.4 # Build image with php 7.4
 ./build php8.0 # Build image with php 8.0
 ./build php8.1 # Build image with php 8.1
