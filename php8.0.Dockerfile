@@ -32,6 +32,9 @@ RUN apk add --no-cache \
   php8-zip \
   php8-simplexml \
   php8-session \
+  php8-opcache \
+  php8-gd \
+  php8-intl \
   curl \
   nginx \
   runit

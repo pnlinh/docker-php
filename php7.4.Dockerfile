@@ -31,6 +31,9 @@ RUN apk add --no-cache \
   php7-zip \
   php7-simplexml \
   php7-session \
+  php7-opcache \
+  php7-gd \
+  php7-intl \
   curl \
   nginx \
   runit
