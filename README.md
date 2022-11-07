@@ -19,7 +19,7 @@ Simple docker image for Symfony development
 - Build for Symfony 3 with PHP 7.4
 
 ```shell
-docker build --no-cache -f php7.4.symfony-3.Dockerfile . -t pnlinh/symfony-3:php7.4
+docker build --no-cache -f php7.4.symfony-3.Dockerfile . -t pnlinh/symfony:3-php7.4
 ```
 
 - Mount your code to be served with container
