@@ -2,9 +2,6 @@
 
 Simple docker image for PHP/Laravel development
 
-- Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
-- Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
-
 ### Why should use this image
 
 - Built on the lightweight and
@@ -19,7 +16,7 @@ Simple docker image for PHP/Laravel development
 - [x] PHP 7.2
 - [x] PHP 7.4
 - [x] PHP 8.0
-- [x] PHP 8.1
+- [x] PHP 8.1 (recommend usage)
 - [ ] PHP 8.2 (todo)
 
 ### How to use
@@ -63,6 +60,11 @@ networks:
 - Browser to: [http://localhost](http://localhost)
 
 ![image](https://user-images.githubusercontent.com/26193890/198828634-fc11aaa1-7175-4433-b4f3-755381669e74.png)
+
+### Dev images
+
+- Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
+- Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
 
 ### References
 
