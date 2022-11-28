@@ -2,9 +2,6 @@
 
 Simple docker image for Symfony development
 
-- Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
-- PHP/Laravel: https://github.com/pnlinh/docker-php
-
 ### Why should use this image
 
 - Built on the lightweight and
@@ -70,6 +67,11 @@ networks:
 - Browser to: [http://localhost](http://localhost)
 
 ![image](https://user-images.githubusercontent.com/26193890/198827932-7901d969-cf9c-4f2a-8154-e2b1fb4840f8.png)
+
+### Useful images:
+
+- Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
+- PHP/Laravel: https://github.com/pnlinh/docker-php
 
 ### References
 
