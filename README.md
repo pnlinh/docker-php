@@ -74,3 +74,4 @@ networks:
 ### References
 
 - https://github.com/TrafeX/docker-php-nginx
+- https://bolshov.online/docker/2020/11/18/runit-vs-supervisor
