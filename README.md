@@ -5,6 +5,23 @@ Simple docker image for Symfony development
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
 - PHP/Laravel: https://github.com/pnlinh/docker-php
 
+### Why should use this image
+
+- Built on the lightweight and
+  secure [Alpine Linux](https://www.alpinelinux.org/) distribution
+- Multi-platform, supporting AMD4, ARMv6, ARMv7, ARM64
+- Use [runit](http://smarden.org/runit/) instead
+  of [supervisor](http://supervisord.org/)
+- Very small Docker image size
+
+### PHP version support
+
+- [x] PHP 7.2
+- [x] PHP 7.4
+- [x] PHP 8.0
+- [x] PHP 8.1
+- [ ] PHP 8.2 (todo)
+
 ### How to use
 
 - Build image
