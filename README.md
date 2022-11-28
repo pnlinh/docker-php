@@ -68,7 +68,7 @@ networks:
 
 ![image](https://user-images.githubusercontent.com/26193890/198827932-7901d969-cf9c-4f2a-8154-e2b1fb4840f8.png)
 
-### Useful images:
+### Useful images
 
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
 - PHP/Laravel: https://github.com/pnlinh/docker-php
