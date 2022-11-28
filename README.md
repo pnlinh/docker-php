@@ -16,7 +16,7 @@ Simple docker image for Symfony development
 - [x] PHP 7.2
 - [x] PHP 7.4
 - [x] PHP 8.0
-- [x] PHP 8.1
+- [x] PHP 8.1 (recommend usage)
 - [ ] PHP 8.2 (todo)
 
 ### How to use
