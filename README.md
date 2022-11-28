@@ -2,9 +2,6 @@
 
 Simple docker image for Magento development
 
-- PHP/Laravel: https://github.com/pnlinh/docker-php
-- Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
-
 ### Why should use this image
 
 - Built on the lightweight and
@@ -19,7 +16,7 @@ Simple docker image for Magento development
 - [x] PHP 7.2
 - [x] PHP 7.4
 - [x] PHP 8.0
-- [x] PHP 8.1
+- [x] PHP 8.1 (recommend usage)
 - [ ] PHP 8.2 (todo)
 
 ### How to use
@@ -48,7 +45,7 @@ version: '3.4'
 
 services:
     app:
-        image: pnlinh/magento:php7.4
+        image: pnlinh/magento:php8.1
         hostname: magento-app
         container_name: magento-app
         ports:
@@ -68,6 +65,11 @@ docker run --name=app --rm -p 80:80 pnlinh/magento:php8.1
 ```
 
 ![image](https://user-images.githubusercontent.com/26193890/164198187-743e3585-1379-4d06-a2d5-34330b17d060.png)
+
+### Useful images
+
+- PHP/Laravel: https://github.com/pnlinh/docker-php
+- Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
 
 ### References
 
