@@ -72,3 +72,4 @@ docker run --name=app --rm -p 80:80 pnlinh/magento:php8.1
 ### References
 
 - https://github.com/TrafeX/docker-php-nginx
+- https://bolshov.online/docker/2020/11/18/runit-vs-supervisor
