@@ -60,7 +60,7 @@ COPY config/72/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
 COPY config/72/php.ini /etc/php7/conf.d/custom.ini
 
 # Configure runit boot script
-COPY config/74/boot.sh /sbin/boot.sh
+COPY config/72/boot.sh /sbin/boot.sh
 
 # Make sure files/folders needed by the processes are accessable when they run under the www user
 ARG nginxUID=1000

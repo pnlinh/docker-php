@@ -58,7 +58,7 @@ COPY config/81/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
 COPY config/81/php.ini /etc/php81/conf.d/custom.ini
 
 # Configure runit boot script
-COPY config/80/boot.sh /sbin/boot.sh
+COPY config/81/boot.sh /sbin/boot.sh
 
 # Make sure files/folders needed by the processes are accessable when they run under the www user
 ARG nginxUID=1000
