@@ -75,8 +75,7 @@ COPY config/72/nginx.run /etc/service/nginx/run
 COPY config/72/php.run /etc/service/php/run
 
 RUN chmod +x /etc/service/nginx/run \
-    && chmod +x /etc/service/php/run \
-    && ls -al /var/www/html/
+    && chmod +x /etc/service/php/run
 
 # Add application
 COPY --chown=www src/ /var/www/html/public
