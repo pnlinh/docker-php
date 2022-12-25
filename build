@@ -17,7 +17,7 @@ if [ $# -gt 0 ]; then
     echo "All done."
     exit 0
   fi
-  docker build --no-cache -f "$1".Dockerfile . -t ${IMAGE}:"$1"
+  docker buildx build --no-cache -f "$1".Dockerfile . -t ${IMAGE}:"$1"
 else
   echo "Nothing to build."
 fi
