@@ -48,8 +48,10 @@ RUN cp /usr/bin/php81 /usr/bin/php
 # Install Composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
-# Configure nginx
+# Configure nginx - http
 COPY config/81/nginx.conf /etc/nginx/nginx.conf
+# Configure nginx - default server
+COPY config/81/conf.d /etc/nginx/conf.d/
 
 # Configure PHP-FPM
 COPY config/81/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
