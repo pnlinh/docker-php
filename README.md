@@ -17,7 +17,7 @@ Simple docker image for PHP/Laravel development
 - [x] PHP 7.4
 - [x] PHP 8.0
 - [x] PHP 8.1 (recommend usage)
-- [ ] PHP 8.2 (todo)
+- [x] PHP 8.2 (recommend usage)
 
 ### How to use
 
@@ -28,6 +28,7 @@ Simple docker image for PHP/Laravel development
 ./build php7.4 # Build image with php 7.4
 ./build php8.0 # Build image with php 8.0
 ./build php8.1 # Build image with php 8.1
+./build php8.2 # Build image with php 8.2
 ```
 
 - Mount your code to be served with container
