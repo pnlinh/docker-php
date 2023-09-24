@@ -49,8 +49,10 @@ RUN cp /usr/bin/php8 /usr/bin/php
 # Install Composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
-# Configure nginx
+# Configure nginx - http
 COPY config/80/nginx.conf /etc/nginx/nginx.conf
+# Configure nginx - default server
+COPY config/80/conf.d /etc/nginx/conf.d/
 
 # Configure PHP-FPM
 COPY config/80/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
@@ -76,9 +78,6 @@ COPY config/80/php.run /etc/service/php/run
 
 RUN chmod +x /etc/service/nginx/run \
     && chmod +x /etc/service/php/run
-
-# Add application
-COPY --chown=www src/ /var/www/html/public
 
 # Expose the port nginx is reachable on
 EXPOSE 80

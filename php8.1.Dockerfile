@@ -78,9 +78,6 @@ COPY config/81/php.run /etc/service/php/run
 RUN chmod +x /etc/service/nginx/run \
     && chmod +x /etc/service/php/run
 
-# Add application
-COPY --chown=www src/ /var/www/html/public
-
 # Expose the port nginx is reachable on
 EXPOSE 80
 

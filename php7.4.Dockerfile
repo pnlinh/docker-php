@@ -48,8 +48,10 @@ RUN cp /usr/bin/php7 /usr/bin/php
 # Install Composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
-# Configure nginx
+# Configure nginx - http
 COPY config/74/nginx.conf /etc/nginx/nginx.conf
+# Configure nginx - default server
+COPY config/74/conf.d /etc/nginx/conf.d/
 
 # Configure PHP-FPM
 COPY config/74/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
@@ -75,9 +77,6 @@ COPY config/74/php.run /etc/service/php/run
 
 RUN chmod +x /etc/service/nginx/run \
     && chmod +x /etc/service/php/run
-
-# Add application
-COPY --chown=www src/ /var/www/html/public
 
 # Expose the port nginx is reachable on
 EXPOSE 80

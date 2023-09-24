@@ -31,6 +31,17 @@ Simple docker image for PHP/Laravel development
 ./build php8.2 # Build image with php 8.2
 ```
 
+- Test image
+
+```shell
+docker run --rm pnlinh/laravel:php8.2 php -v
+
+PHP 8.2.8 (cli) (built: Jul  6 2023 19:21:55) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.2.8, Copyright (c) Zend Technologies
+    with Zend OPcache v8.2.8, Copyright (c), by Zend Technologies
+```
+
 - Mount your code to be served with container
 
 ```shell
@@ -61,6 +72,9 @@ networks:
 - Browser to: [http://localhost](http://localhost)
 
 ![image](https://user-images.githubusercontent.com/26193890/198828634-fc11aaa1-7175-4433-b4f3-755381669e74.png)
+
+### Add Xdebug
+- See [docs/xdebug-support.md](docs/xdebug-support.md)
 
 ### Useful images
 
