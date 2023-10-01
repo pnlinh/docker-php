@@ -18,7 +18,7 @@ if [ $# -gt 0 ]; then
     exit 0
   fi
   docker buildx build \
-    --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 \
+    --platform linux/amd64,linux/arm64,linux/arm/v8,linux/arm/v7,linux/arm/v6 \
     --no-cache \
     -f "$1".Dockerfile \
     -t ${IMAGE}:"$1" \
