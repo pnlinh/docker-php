@@ -40,25 +40,14 @@ RUN apk add --no-cache \
   nginx \
   runit
 
-# Install XDebug
-
 # Create symlink so programs depending on `php` still function
 RUN cp /usr/bin/php7 /usr/bin/php
 
 # Install Composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
-# Configure nginx - http
-COPY config/74/nginx.conf /etc/nginx/nginx.conf
-# Configure nginx - default server
-COPY config/74/conf.d /etc/nginx/conf.d/
-
-# Configure PHP-FPM
-COPY config/74/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
-COPY config/74/php.ini /etc/php7/conf.d/custom.ini
-
-# Configure runit boot script
-COPY config/74/boot.sh /sbin/boot.sh
+ADD rootfs /
+COPY boot.sh /sbin/boot.sh
 
 # Make sure files/folders needed by the processes are accessable when they run under the www user
 ARG nginxUID=1000
@@ -71,9 +60,6 @@ RUN adduser -D -u ${nginxUID} -g ${nginxGID} -s /bin/sh www && \
     chown -R www:www /run && \
     chown -R www:www /var/lib/nginx && \
     chown -R www:www /var/log/nginx
-
-COPY config/74/nginx.run /etc/service/nginx/run
-COPY config/74/php.run /etc/service/php/run
 
 RUN chmod +x /etc/service/nginx/run \
     && chmod +x /etc/service/php/run
