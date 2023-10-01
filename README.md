@@ -24,22 +24,27 @@ Simple docker image for PHP/Laravel development
 - Build image
 
 ```shell
-./build php7.2 # Build image with php 7.2
-./build php7.4 # Build image with php 7.4
-./build php8.0 # Build image with php 8.0
-./build php8.1 # Build image with php 8.1
-./build php8.2 # Build image with php 8.2
+VERSION=7.2 make build # Build image with php 7.2
+VERSION=7.4 make build # Build image with php 7.4
+VERSION=8.0 make build # Build image with php 8.0
+VERSION=8.1 make build # Build image with php 8.1
+VERSION=8.2 make build # Build image with php 8.2
 ```
 
-- Test image
+- Test image by PHP version
 
 ```shell
-docker run --rm pnlinh/laravel:php8.2 php -v
+VERSION=8.2 make test
+VERSION=8.1 make test
+VERSION=8.0 make test
+VERSION=7.4 make test
+VERSION=7.2 make test
+```
 
-PHP 8.2.8 (cli) (built: Jul  6 2023 19:21:55) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.2.8, Copyright (c) Zend Technologies
-    with Zend OPcache v8.2.8, Copyright (c), by Zend Technologies
+- Test all image
+
+```shell
+make test-all
 ```
 
 - Mount your code to be served with container
@@ -48,7 +53,7 @@ Zend Engine v4.2.8, Copyright (c) Zend Technologies
 docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:php8.1
 ```
 
-- With docker-compose
+- Using docker-compose
 
 ```
 version: '3.4'
@@ -74,6 +79,7 @@ networks:
 ![image](https://user-images.githubusercontent.com/26193890/198828634-fc11aaa1-7175-4433-b4f3-755381669e74.png)
 
 ### Add Xdebug
+
 - See [docs/xdebug-support.md](docs/xdebug-support.md)
 
 ### Useful images
