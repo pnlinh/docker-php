@@ -34,6 +34,7 @@ RUN apk add --no-cache \
   php7-opcache \
   php7-pcntl \
   php7-posix \
+  php7-ftp \
   curl \
   nginx \
   runit

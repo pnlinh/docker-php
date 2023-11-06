@@ -36,6 +36,7 @@ RUN apk add --no-cache \
   php81-intl \
   php81-pcntl \
   php81-posix \
+  php81-ftp \
   curl \
   nginx \
   runit

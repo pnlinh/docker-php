@@ -13,6 +13,14 @@ release: ### Build and push image to DockerHub
 	echo "Releasing: ${IMAGE}${VERSION}"
 	docker buildx build --push --platform $(ARCHS) -t $(IMAGE)${VERSION} -f ${VERSION}/Dockerfile ${VERSION}/
 
+release-all: ### Build all PHP version and push image to DockerHub
+	echo "Releasing all PHP version"
+	VERSION=8.2 make release
+	VERSION=8.1 make release
+	VERSION=8.0 make release
+	VERSION=7.4 make release
+	VERSION=7.2 make release
+
 test: ### Test image
 	$(DOCKER_RUN) php -v
 	$(DOCKER_RUN) sh -c "php -v | grep ${VERSION}"
