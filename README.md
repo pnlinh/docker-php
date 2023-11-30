@@ -18,6 +18,7 @@ Simple docker image for PHP/Laravel development
 - [x] PHP 8.0
 - [x] PHP 8.1 (recommend usage)
 - [x] PHP 8.2 (recommend usage)
+- [x] PHP 8.3
 
 ### How to use
 
@@ -29,11 +30,13 @@ VERSION=7.4 make build # Build image with php 7.4
 VERSION=8.0 make build # Build image with php 8.0
 VERSION=8.1 make build # Build image with php 8.1
 VERSION=8.2 make build # Build image with php 8.2
+VERSION=8.3 make build # Build image with php 8.3
 ```
 
 - Test image by PHP version
 
 ```shell
+VERSION=8.3 make test
 VERSION=8.2 make test
 VERSION=8.1 make test
 VERSION=8.0 make test
@@ -79,6 +82,10 @@ networks:
 ![image](https://user-images.githubusercontent.com/26193890/198828634-fc11aaa1-7175-4433-b4f3-755381669e74.png)
 
 ### Security scanner
+
+- PHP 8.3
+
+WIP
 
 - PHP 8.2
 
