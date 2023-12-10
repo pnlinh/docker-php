@@ -96,7 +96,21 @@ networks:
 
 - PHP 8.3
 
-WIP
+```
+trivy image pnlinh/laravel:php8.3
+2023-12-10T10:49:03.211+0700	INFO	Vulnerability scanning is enabled
+2023-12-10T10:49:03.211+0700	INFO	Secret scanning is enabled
+2023-12-10T10:49:03.211+0700	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2023-12-10T10:49:03.211+0700	INFO	Please see also https://aquasecurity.github.io/trivy/v0.48/docs/scanner/secret/#recommendation for faster secret detection
+2023-12-10T10:49:03.221+0700	INFO	Detected OS: alpine
+2023-12-10T10:49:03.221+0700	INFO	Detecting Alpine vulnerabilities...
+2023-12-10T10:49:03.223+0700	INFO	Number of language-specific files: 0
+
+pnlinh/laravel:php8.3 (alpine 3.19.0)
+
+Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
+```
 
 - PHP 8.2
 
