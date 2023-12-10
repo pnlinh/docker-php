@@ -189,6 +189,10 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 - See [docs/xdebug-support.md](docs/xdebug-support.md)
 
+### Add SSL in local
+
+- See [docs/enable-https.md](docs/enable-https.md)
+
 ### Useful images
 
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
