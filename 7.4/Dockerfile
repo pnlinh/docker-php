@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.15
+ARG ALPINE_VERSION=3.15.11
 FROM alpine:${ALPINE_VERSION}
 LABEL Maintainer="Ngoc Linh Pham <pnlinh1207@gmail.com>"
 LABEL Description="Lightweight container with Nginx 1.20 & PHP 7.4 based on Alpine Linux."
