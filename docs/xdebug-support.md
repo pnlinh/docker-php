@@ -21,7 +21,7 @@ xdebug.client_port=9003
 Create a new image with the following `Dockerfile`
 
 ```Dockerfile
-FROM pnlinh/laravel:php8.2
+FROM pnlinh/codeigniter:php8.2
 
 # Temporary switch to root
 USER root
