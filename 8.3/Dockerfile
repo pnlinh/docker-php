@@ -18,6 +18,7 @@ RUN apk add --no-cache \
   php83-openssl  \
   php83-pdo_pgsql  \
   php83-pdo_mysql \
+  php83-mysqli \
   php83-curl  \
   php83-pdo  \
   php83-tokenizer  \

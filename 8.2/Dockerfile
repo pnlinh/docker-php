@@ -18,6 +18,7 @@ RUN apk add --no-cache \
   php82-openssl  \
   php82-pdo_pgsql  \
   php82-pdo_mysql \
+  php82-mysqli \
   php82-curl  \
   php82-pdo  \
   php82-tokenizer  \

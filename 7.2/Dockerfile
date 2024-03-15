@@ -18,6 +18,7 @@ RUN apk add --no-cache \
   php7-openssl  \
   php7-pdo_pgsql  \
   php7-pdo_mysql \
+  php7-mysqli \
   php7-curl  \
   php7-pdo  \
   php7-tokenizer  \
