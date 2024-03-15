@@ -1,6 +1,6 @@
 # Docker PHP-FPM & Nginx base on Alpine Linux
 
-Simple docker image for PHP/Laravel development
+Simple docker image for Laravel development
 
 ### Why should use this image
 
@@ -197,6 +197,7 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 - Magento: https://github.com/pnlinh/docker-php/tree/feature/magento
 - Symfony: https://github.com/pnlinh/docker-php/tree/feature/symfony
+- CodeIgniter: https://github.com/pnlinh/docker-php/tree/feature/codeigniter
 
 ### References
 
