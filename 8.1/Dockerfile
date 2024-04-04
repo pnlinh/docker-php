@@ -18,6 +18,7 @@ RUN apk add --no-cache \
   php81-openssl  \
   php81-pdo_pgsql  \
   php81-pdo_mysql \
+  php81-pdo_sqlite \
   php81-curl  \
   php81-pdo  \
   php81-tokenizer  \
