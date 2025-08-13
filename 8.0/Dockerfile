@@ -33,7 +33,6 @@ RUN apk add --no-cache \
   php8-simplexml \
   php8-session \
   php8-opcache \
-  php8-gd \
   php8-intl \
   php8-pcntl \
   php8-posix \

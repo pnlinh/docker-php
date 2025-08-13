@@ -33,7 +33,6 @@ RUN apk add --no-cache \
   php7-simplexml \
   php7-session \
   php7-opcache \
-  php7-gd \
   php7-intl \
   php7-pcntl \
   php7-posix \
