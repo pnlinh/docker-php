@@ -16,6 +16,7 @@ release: ### Build and push image to DockerHub
 release-all: ### Build all PHP version and push image to DockerHub
 	echo "Releasing all PHP version"
 	VERSION=8.3 make release
+	VERSION=8.4 make release
 	VERSION=8.2 make release
 	VERSION=8.1 make release
 	VERSION=8.0 make release
@@ -29,6 +30,7 @@ test: ### Test image
 	$(DOCKER_RUN) sh -c "nginx -t"
 
 test-all: ### Test all image
+	VERSION=8.4 make build test
 	VERSION=8.3 make build test
 	VERSION=8.2 make build test
 	VERSION=8.1 make build test
