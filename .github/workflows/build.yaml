@@ -28,6 +28,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Push image
+      - name: Test image
         run: |-
-          make release-all
+          make test-all
+
+#      - name: Push image
+#        run: |-
+#          make release-all
