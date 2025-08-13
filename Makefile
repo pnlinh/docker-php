@@ -15,13 +15,22 @@ release: ### Build and push image to DockerHub
 
 release-all: ### Build all PHP version and push image to DockerHub
 	echo "Releasing all PHP version"
-	VERSION=8.3 make release
 	VERSION=8.4 make release
+	VERSION=8.3 make release
 	VERSION=8.2 make release
 	VERSION=8.1 make release
 	VERSION=8.0 make release
 	VERSION=7.4 make release
 	VERSION=7.2 make release
+
+release-all-to-ghcr: ### Build all PHP version and push image to GitHub Container Registry
+	VERSION=8.4 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=8.3 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=8.2 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=8.1 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=8.0 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=7.4 IMAGE=ghcr.io/pnlinh/laravel make release
+	VERSION=7.2 IMAGE=ghcr.io/pnlinh/laravel make release
 
 test: ### Test image
 	$(DOCKER_RUN) php -v
