@@ -95,41 +95,54 @@ networks:
 
 ### Security scanner
 
+- PHP 8.4
+
+```
+trivy image pnlinh/laravel:php8.4
+2025-08-13T14:26:29+07:00	INFO	[vuln] Vulnerability scanning is enabled
+2025-08-13T14:26:29+07:00	INFO	[secret] Secret scanning is enabled
+2025-08-13T14:26:29+07:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-08-13T14:26:29+07:00	INFO	[secret] Please see also https://aquasecurity.github.io/trivy/v0.58/docs/scanner/secret#recommendation for faster secret detection
+2025-08-13T14:26:32+07:00	INFO	Detected OS	family="alpine" version="3.21.4"
+2025-08-13T14:26:32+07:00	WARN	This OS version is not on the EOL list	family="alpine" version="3.21"
+2025-08-13T14:26:32+07:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.21" repository="3.21" pkg_num=96
+2025-08-13T14:26:32+07:00	INFO	Number of language-specific files	num=0
+
+pnlinh/laravel:php8.4 (alpine 3.21.4)
+
+Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+```
+
 - PHP 8.3
 
 ```
 trivy image pnlinh/laravel:php8.3
-2023-12-10T10:49:03.211+0700	INFO	Vulnerability scanning is enabled
-2023-12-10T10:49:03.211+0700	INFO	Secret scanning is enabled
-2023-12-10T10:49:03.211+0700	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2023-12-10T10:49:03.211+0700	INFO	Please see also https://aquasecurity.github.io/trivy/v0.48/docs/scanner/secret/#recommendation for faster secret detection
-2023-12-10T10:49:03.221+0700	INFO	Detected OS: alpine
-2023-12-10T10:49:03.221+0700	INFO	Detecting Alpine vulnerabilities...
-2023-12-10T10:49:03.223+0700	INFO	Number of language-specific files: 0
+2025-08-13T14:42:08+07:00	INFO	[vuln] Vulnerability scanning is enabled
+2025-08-13T14:42:08+07:00	INFO	[secret] Secret scanning is enabled
+2025-08-13T14:42:08+07:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-08-13T14:42:08+07:00	INFO	[secret] Please see also https://aquasecurity.github.io/trivy/v0.58/docs/scanner/secret#recommendation for faster secret detection
+2025-08-13T14:42:08+07:00	INFO	Detected OS	family="alpine" version="3.20.7"
+2025-08-13T14:42:08+07:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.20" repository="3.20" pkg_num=96
+2025-08-13T14:42:08+07:00	INFO	Number of language-specific files	num=0
 
-pnlinh/laravel:php8.3 (alpine 3.19.0)
+pnlinh/laravel:php8.3 (alpine 3.20.7)
 
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
-
 ```
 
 - PHP 8.2
 
 ```
 trivy image pnlinh/laravel:php8.2
-2023-10-10T15:02:53.141+0700	INFO	Need to update DB
-2023-10-10T15:02:53.142+0700	INFO	DB Repository: ghcr.io/aquasecurity/trivy-db
-2023-10-10T15:02:53.142+0700	INFO	Downloading DB...
-40.28 MiB / 40.28 MiB [--------------------------------------------------------------------------------------------------] 100.00% 1.62 MiB p/s 25s
-2023-10-10T15:03:22.397+0700	INFO	Vulnerability scanning is enabled
-2023-10-10T15:03:22.397+0700	INFO	Secret scanning is enabled
-2023-10-10T15:03:22.397+0700	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2023-10-10T15:03:22.397+0700	INFO	Please see also https://aquasecurity.github.io/trivy/v0.45/docs/scanner/secret/#recommendation for faster secret detection
-2023-10-10T15:03:24.592+0700	INFO	Detected OS: alpine
-2023-10-10T15:03:24.592+0700	INFO	Detecting Alpine vulnerabilities...
-2023-10-10T15:03:24.596+0700	INFO	Number of language-specific files: 0
+2025-08-13T14:41:33+07:00	INFO	[vuln] Vulnerability scanning is enabled
+2025-08-13T14:41:33+07:00	INFO	[secret] Secret scanning is enabled
+2025-08-13T14:41:33+07:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-08-13T14:41:33+07:00	INFO	[secret] Please see also https://aquasecurity.github.io/trivy/v0.58/docs/scanner/secret#recommendation for faster secret detection
+2025-08-13T14:41:33+07:00	INFO	Detected OS	family="alpine" version="3.20.7"
+2025-08-13T14:41:33+07:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.20" repository="3.20" pkg_num=96
+2025-08-13T14:41:33+07:00	INFO	Number of language-specific files	num=0
 
-pnlinh/laravel:php8.2 (alpine 3.18.4)
+pnlinh/laravel:php8.2 (alpine 3.20.7)
 
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
@@ -138,15 +151,15 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 ```text
 trivy image pnlinh/laravel:php8.1
-2023-10-10T15:05:27.635+0700	INFO	Vulnerability scanning is enabled
-2023-10-10T15:05:27.635+0700	INFO	Secret scanning is enabled
-2023-10-10T15:05:27.635+0700	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2023-10-10T15:05:27.635+0700	INFO	Please see also https://aquasecurity.github.io/trivy/v0.45/docs/scanner/secret/#recommendation for faster secret detection
-2023-10-10T15:06:09.378+0700	INFO	Detected OS: alpine
-2023-10-10T15:06:09.378+0700	INFO	Detecting Alpine vulnerabilities...
-2023-10-10T15:06:09.391+0700	INFO	Number of language-specific files: 0
+2025-08-13T14:40:56+07:00	INFO	[vuln] Vulnerability scanning is enabled
+2025-08-13T14:40:56+07:00	INFO	[secret] Secret scanning is enabled
+2025-08-13T14:40:56+07:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-08-13T14:40:56+07:00	INFO	[secret] Please see also https://aquasecurity.github.io/trivy/v0.58/docs/scanner/secret#recommendation for faster secret detection
+2025-08-13T14:40:58+07:00	INFO	Detected OS	family="alpine" version="3.19.8"
+2025-08-13T14:40:58+07:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.19" repository="3.19" pkg_num=97
+2025-08-13T14:40:58+07:00	INFO	Number of language-specific files	num=0
 
-pnlinh/laravel:php8.1 (alpine 3.18.4)
+pnlinh/laravel:php8.1 (alpine 3.19.8)
 
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
