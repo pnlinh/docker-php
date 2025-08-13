@@ -9,7 +9,7 @@ Simple docker image for Laravel development
 - Multi-platform, supporting AMD4, ARMv6, ARMv7, ARM64
 - Use [runit](http://smarden.org/runit/) instead
   of [supervisor](http://supervisord.org/)
-- Very small Docker image size
+- Tiny Docker image size
 
 ### PHP version support
 
@@ -19,6 +19,7 @@ Simple docker image for Laravel development
 - [x] PHP 8.1 (recommend usage)
 - [x] PHP 8.2 (recommend usage)
 - [x] PHP 8.3
+- [x] PHP 8.4
 
 ### How to use
 
@@ -31,6 +32,7 @@ VERSION=8.0 make build # Build image with php 8.0
 VERSION=8.1 make build # Build image with php 8.1
 VERSION=8.2 make build # Build image with php 8.2
 VERSION=8.3 make build # Build image with php 8.3
+VERSION=8.4 make build # Build image with php 8.4
 ```
 
 - How to customize image name
@@ -47,6 +49,7 @@ VERSION=8.3 IMAGE=archielite/laravel:php make build # Build image with php 8.3
 - Test image by PHP version
 
 ```shell
+VERSION=8.4 make test
 VERSION=8.3 make test
 VERSION=8.2 make test
 VERSION=8.1 make test
@@ -55,7 +58,7 @@ VERSION=7.4 make test
 VERSION=7.2 make test
 ```
 
-- Test all image
+- Test all images
 
 ```shell
 make test-all
@@ -69,23 +72,21 @@ docker run --name=app -v /path/to/project:/var/www/html -p 80:80 pnlinh/laravel:
 
 - Using docker-compose
 
-```
-version: '3.4'
-
+```yaml
 services:
-    app:
-        image: pnlinh/laravel:php8.1
-        hostname: laravel-app
-        container_name: laravel-app
-        ports:
-            - "80:80"
-        volumes:
-            - .:/var/www/html
-        networks:
-            - localnet
+  app:
+    image: pnlinh/laravel:php8.1
+    hostname: laravel-app
+    container_name: laravel-app
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - localnet
 networks:
-    localnet:
-        driver: "bridge"
+  localnet:
+    driver: "bridge"
 ```
 
 - Browser to: [http://localhost](http://localhost)
@@ -151,6 +152,7 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
 
 - PHP 7.4
+
 ```text
 trivy image pnlinh/laravel:php7.4
 2023-10-10T15:10:18.620+0700	INFO	Vulnerability scanning is enabled
@@ -167,6 +169,7 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
 
 - PHP 7.2
+
 ```text
 trivy image pnlinh/laravel:php7.2
 2023-10-10T15:11:17.417+0700	INFO	Vulnerability scanning is enabled
