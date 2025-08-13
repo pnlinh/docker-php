@@ -1,49 +1,49 @@
-ARG ALPINE_VERSION=3.15.11
+ARG ALPINE_VERSION=3.21
 FROM alpine:${ALPINE_VERSION}
 LABEL Maintainer="Ngoc Linh Pham <pnlinh1207@gmail.com>"
-LABEL Description="Lightweight container with Nginx 1.20 & PHP 7.4 based on Alpine Linux."
+LABEL Description="Lightweight container with Nginx 1.24 & PHP 8.4 based on Alpine Linux."
 
 # Setup document root
 WORKDIR /var/www/html
 
 # Install packages and remove default server definition
 RUN apk add --no-cache \
-  php7  \
-  php7-fpm  \
-  php7-bcmath  \
-  php7-ctype  \
-  php7-fileinfo \
-  php7-json  \
-  php7-mbstring  \
-  php7-openssl  \
-  php7-pdo_pgsql  \
-  php7-pdo_mysql \
-  php7-pdo_sqlite \
-  php7-curl  \
-  php7-pdo  \
-  php7-tokenizer  \
-  php7-xml \
-  php7-phar \
-  php7-dom \
-  php7-gd \
-  php7-iconv \
-  php7-xmlwriter \
-  php7-xmlreader \
-  php7-zip \
-  php7-simplexml \
-  php7-session \
-  php7-opcache \
-  php7-intl \
-  php7-pcntl \
-  php7-posix \
-  php7-ftp \
-  php7-sodium \
+  php84  \
+  php84-fpm  \
+  php84-bcmath  \
+  php84-ctype  \
+  php84-fileinfo \
+  php84-json  \
+  php84-mbstring  \
+  php84-openssl  \
+  php84-pdo_pgsql  \
+  php84-pdo_mysql \
+  php84-pdo_sqlite \
+  php84-curl  \
+  php84-pdo  \
+  php84-tokenizer  \
+  php84-xml \
+  php84-phar \
+  php84-dom \
+  php84-gd \
+  php84-iconv \
+  php84-xmlwriter \
+  php84-xmlreader \
+  php84-zip \
+  php84-simplexml \
+  php84-session \
+  php84-opcache \
+  php84-intl \
+  php84-pcntl \
+  php84-posix \
+  php84-ftp \
+  php84-sodium \
   curl \
   nginx \
   runit
 
 # Create symlink so programs depending on `php` still function
-RUN cp /usr/bin/php7 /usr/bin/php
+RUN cp /usr/bin/php84 /usr/bin/php
 
 # Install Composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer

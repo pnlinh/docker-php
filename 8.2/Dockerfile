@@ -33,7 +33,6 @@ RUN apk add --no-cache \
   php82-simplexml \
   php82-session \
   php82-opcache \
-  php82-gd \
   php82-intl \
   php82-pcntl \
   php82-posix \
