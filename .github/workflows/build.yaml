@@ -43,4 +43,4 @@ jobs:
 
       - name: Push image to GitHub Container Registry
         run: |-
-          release-all-to-ghcr
+          make release-all-to-ghcr
