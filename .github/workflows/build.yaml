@@ -32,6 +32,6 @@ jobs:
         run: |-
           make test-all
 
-#      - name: Push image
-#        run: |-
-#          make release-all
+      - name: Push image
+        run: |-
+          make release-all
