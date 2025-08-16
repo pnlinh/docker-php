@@ -24,7 +24,7 @@ Lightweight Docker image for PHP development.
 ### Stack images
 
 - Laravel: [docker-laravel](https://github.com/pnlinh/docker-laravel)
-- Magento: In progress
+- Magento: [docker-magento](https://github.com/pnlinh/docker-magento)
 - Symfony: In progress
 - CodeIgniter: [docker-codeigniter](https://github.com/pnlinh/docker-codeigniter)
 
